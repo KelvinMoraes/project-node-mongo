@@ -8,6 +8,13 @@ class ProductController {
     res.render('products/all', { products, emptyProducts });
   }
 
+  static async getProductById(req, res) {
+    const { id } = req.params;
+    const productModel = new Product();
+    let product = await productModel.getById(id);
+    res.render('products/product', { product });
+  }
+
   static createProductsView(req, res) {
     res.render('products/create');
   }

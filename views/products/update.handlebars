@@ -1,0 +1,24 @@
+<div class='products-form-container'>
+  {{! <a href='/toughts/dashboard'>Voltar</a> }}
+  <h1>Editar produto: {{product.name}}</h1>
+  <form action='/products/createData' method='POST'>
+    <div class='form-control'>
+      <label for='name'>Nome</label>
+      <input type='text' name='name' placeholder='Digite nome..' />
+    </div>
+    <div class='form-control'>
+      <label for='image'>Imagem</label>
+      <input type='text' name='image' placeholder='Digite o image..' />
+    </div>
+    <div class='form-control'>
+      <label for='price'>Preço</label>
+      <input type='text' name='price' placeholder='Digite o preço..' />
+    </div>
+    <div class='form-control'>
+      <label for='description'>Descrição</label>
+      <textarea name='description' placeholder='Digite a descrição..'></textarea>
+    </div>
+
+    <input type='submit' value='Cadastrar' class='btn' />
+  </form>
+</div>

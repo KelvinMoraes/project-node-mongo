@@ -1,5 +1,7 @@
 const { getDb } = require('../db/conn');
 
+const { ObjectId } = require('mongodb');
+
 class Product {
   constructor(name, image, price, description) {
     this.name = name;
@@ -8,9 +10,14 @@ class Product {
     this.description = description;
   }
 
-  async get() {
+  get() {
     const db = getDb();
     return db.collection('products').find({}).toArray();
+  }
+
+  async getById(id) {
+    const db = getDb();
+    return db.collection('products').findOne({ _id: new ObjectId(id) });
   }
 
   async handle() {

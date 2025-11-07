@@ -11,13 +11,13 @@
         <img src='{{this.image}}' alt='{{this.name}}' />
         <h3 class='name'>{{this.name}}</h3>
         <h4 class='price'>R$ {{this.price}}</h4>
-        {{!-- <span class='actions'>
-          <a href='/products/update/{{this.id}}' class='btn'></a>
-          <form action='/products/delete' method='POST'>
+        <span class='actions'>
+          <a href='/products/{{this._id}}'> Detalhes</a>
+          {{!-- <form action='/products/delete' method='POST'>
             <input type='hidden' name='id' value='{{this.id}}' />
             <input type='submit' value='Excluir' class='btn' />
-          </form>
-        </span> --}}
+          </form> --}}
+        </span>
       </div>
 
     {{/each}}

@@ -5,6 +5,9 @@ const router = express.Router();
 const ProductController = require('../controllers/ProductController');
 
 router.get('/', ProductController.getProducts);
+router.get('/:id', ProductController.getProductById);
+// router.get('/updateView', ProductController.updateProductsView);
+// router.post('/updateData', ProductController.updateProductsData);
 router.get('/createView', ProductController.createProductsView);
 router.post('/createData', ProductController.createProductsData);
 
