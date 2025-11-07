@@ -13,13 +13,18 @@ class ProductController {
   }
 
   static async createProductsData(req, res) {
-    const { name, image, price, description } = req.body;
+    try {
+      const { name, image, price, description } = req.body;
 
-    const product = new Product(name, image, price, description);
+      const product = new Product(name, image, price, description);
 
-    await product.handle();
+      await product.handle();
 
-    return ProductController.getProducts(req, res);
+      return ProductController.getProducts(req, res);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).send('Erro ao criar produto');
+    }
   }
 }
 
