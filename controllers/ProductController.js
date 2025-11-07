@@ -18,7 +18,8 @@ class ProductController {
     const product = new Product(name, image, price, description);
 
     await product.handle();
-    res.render('products/all');
+
+    return ProductController.getProducts(req, res);
   }
 }
 
