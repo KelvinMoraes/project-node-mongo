@@ -1,0 +1,29 @@
+<div class='dashboard'>
+  <div class='title-container'>
+    <h2>
+      Dashboard
+    </h2>
+  </div>
+  <h3>Lista de Produtos</h3>
+
+  <div class='products'>
+    {{#each products}}
+      <div class='product'>
+        <img src='{{this.image}}' alt='{{this.name}}' />
+        <h3 class='name'>{{this.name}}</h3>
+        <h4 class='price'>R$ {{this.price}}</h4>
+        {{!-- <span class='actions'>
+          <a href='/products/update/{{this.id}}' class='btn'></a>
+          <form action='/products/delete' method='POST'>
+            <input type='hidden' name='id' value='{{this.id}}' />
+            <input type='submit' value='Excluir' class='btn' />
+          </form>
+        </span> --}}
+      </div>
+
+    {{/each}}
+  </div>
+  {{#if emptyProducts}}
+    <p>Ainda não há produtos cadastrados. Cadastre um <a href='/products/createView'>aqui</a></p>
+  {{/if}}
+</div>
